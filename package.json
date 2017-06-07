@@ -10,7 +10,7 @@
   "dependencies": {
     "cookieparser": "^0.1.0",
     "cross-env": "^1.0.8",
-    "express": "^4.13.4",
+    "express": "^4.14.0",
     "mongodb": "^2.1.7",
     "socket.io": "^1.4.8",
     "socket.io-client": "^1.4.8",

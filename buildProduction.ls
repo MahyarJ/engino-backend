@@ -19,13 +19,13 @@ module.exports = ({projectDir, buildDir}) ->
     else
       console.log 'Webpack: Done'
 
-  floraPackage = require \./package.json
+  enginoPackage = require \./package.json
   projectPackage = require path.join projectDir, './package.json'
 
-  deps = floraPackage.dependencies
+  deps = enginoPackage.dependencies
   for packageName, version of projectPackage.dependencies
     if deps[packageName]? and deps[packageName] isnt version
-      console.warn "Dependency conflict. Package name: #{packageName}. Flora version: #{deps[packageName]} | Project version: #{version}"
+      console.warn "Dependency conflict. Package name: #{packageName}. Engino version: #{deps[packageName]} | Project version: #{version}"
 
   deps <<< projectPackage.dependencies
   delete deps[\@mahyarj/engino-server]
@@ -66,4 +66,4 @@ copyFolderRecursiveSync = (source, target) ->
     files.forEach (file) ->
       curSource = path.join source, file
       if (fs.lstatSync curSource).isDirectory! then copyFolderRecursiveSync curSource, targetFolder else copyFileSync curSource, targetFolder
-      return 
+      return
